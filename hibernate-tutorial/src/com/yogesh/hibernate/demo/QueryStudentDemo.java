@@ -53,6 +53,12 @@ public class QueryStudentDemo {
 			displayStudents(theStudents);
 			
 			
+			//query students : where email LIKE '%gmails.com'
+			theStudents = session.createQuery("from Student s where s.email LIKE '%gmails.com'").getResultList();
+			System.out.println("Student who have email of gmails");
+			displayStudents(theStudents);
+			
+			
 			//commit the transaction
 			session.getTransaction().commit();
 			
